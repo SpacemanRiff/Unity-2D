@@ -9,26 +9,28 @@ public class PlayerControls : MonoBehaviour {
     public float bulletKnockBack;
     public float rof;
     public Rigidbody2D rb;
-    public SpriteRenderer sr;
     public CircleCollider2D cc;
     public GameObject bulletPrefab;
     private bool isJumping;
     private int lastDirection;
     private float timeUntilNextShot;
+    private Animator animator;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
         cc = GetComponent<CircleCollider2D>();
         isJumping = false;
         lastDirection = -1;
         timeUntilNextShot = 0;
+        animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per tick
 	void FixedUpdate () {
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0), ForceMode2D.Force);
+        animator.SetBool("IsMoving", Mathf.Abs(Input.GetAxis("Horizontal")) > 0);
+        animator.SetFloat("MoveSpeed", Mathf.Abs(rb.velocity.x/5));
         if (!isJumping)
         {
             rb.AddForce(new Vector2(0, Input.GetAxis("Jump") * jumpSpeed), ForceMode2D.Impulse);
@@ -44,13 +46,23 @@ public class PlayerControls : MonoBehaviour {
 
         if(Input.GetAxis("Horizontal") < 0)
         {
+            if (lastDirection == -1)
+            {
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
+            }
             lastDirection = 1;
-            sr.flipX = true;
         }
         else if (Input.GetAxis("Horizontal") > 0)
         {
+            if (lastDirection == 1)
+            {
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
+            }
             lastDirection = -1;
-            sr.flipX = false;
         }
 
         if (Input.GetAxis("Fire1") == 1 && timeUntilNextShot <= 0)

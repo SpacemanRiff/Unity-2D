@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 274a206f0a4be344bb5444cc6ae66c92
-timeCreated: 1477504303
+timeCreated: 1477535850
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,10 +12,12 @@ TextureImporter:
     21300010: spritesheet-player_arm_r2
     21300012: spritesheet-player_chest
     21300014: spritesheet-player_legs_l1
-    21300016: spritesheet-player_leg_r1
+    21300016: spritesheet-player_legs_r1
     21300018: spritesheet-player_legs_l2
     21300020: spritesheet-player_abs
     21300022: spritesheet-player_legs_r2
+    21300024: spritesheet-player_legs_r3
+    21300026: spritesheet-player_legs_l3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -160,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 26
+        y: 31
         width: 10
         height: 15
       alignment: 2
@@ -169,11 +171,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet-player_leg_r1
+      name: spritesheet-player_legs_r1
       rect:
         serializedVersion: 2
         x: 140
-        y: 26
+        y: 31
         width: 10
         height: 15
       alignment: 2
@@ -186,8 +188,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 5
-        width: 15
+        y: 10
+        width: 10
         height: 15
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -212,11 +214,37 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 140
-        y: 5
-        width: 15
+        y: 10
+        width: 10
         height: 15
       alignment: 2
       pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet-player_legs_r3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 15
+        height: 5
+      alignment: 9
+      pivot: {x: 0.33333334, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet-player_legs_l3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 15
+        height: 5
+      alignment: 9
+      pivot: {x: 0.33333334, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
